@@ -7,16 +7,16 @@ import pages.base.BasePage;
 
 import static common.Config.NUMBER_OF_CARDS;
 
-public class RealTimeListingPage extends BasePage {
+public class RealtListingPage extends BasePage {
 
-    public RealTimeListingPage(WebDriver driver) {
+    public RealtListingPage(WebDriver driver) {
         super(driver);
     }
 
     private final By card
             = By.xpath("//div[@class='listing view-format']//div[@data-mode='3']");
 
-    public RealTimeListingPage checkCountCards() {
+    public RealtListingPage checkCountCards() {
         waitElementVisible(driver.findElement(card));
         int countCard = driver.findElements(card).size();
         Assert.assertEquals(countCard, NUMBER_OF_CARDS);
